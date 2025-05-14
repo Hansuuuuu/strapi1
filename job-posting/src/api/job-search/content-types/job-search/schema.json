@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "job_searches",
+  "info": {
+    "singularName": "job-search",
+    "pluralName": "job-searches",
+    "displayName": "Job Search",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "location": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Full-time",
+        "Part-time",
+        "Contract",
+        "Internship"
+      ]
+    },
+    "companies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::company.company"
+    },
+    "salary": {
+      "type": "biginteger"
+    },
+    "requirements": {
+      "type": "blocks"
+    },
+    "postedAt": {
+      "type": "datetime"
+    },
+    "deadline": {
+      "type": "datetime"
+    },
+    "jobStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Open",
+        "Closed",
+        "Filled"
+      ]
+    }
+  }
+}
